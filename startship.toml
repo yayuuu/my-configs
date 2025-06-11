@@ -1,0 +1,138 @@
+format = """
+ [┌──\\(](bold #9D66FF)$username$hostname[\\)─\\[](bold #9D66FF)$directory[\\]](bold #9D66FF) \
+$kubernetes\
+$git_branch\
+$hg_branch\
+$docker_context\
+$package\
+$buf\
+$cmake\
+$cobol\
+$container\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$haskell\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$env_var\
+$crystal\
+$custom\
+$sudo
+ [└─>](bold #9D66FF) """
+
+[directory]
+truncation_length = 100
+truncate_to_repo = false
+style = "bold white"
+format = "[$path]($style)[$read_only]($read_only_style)"
+
+[battery]
+full_symbol = "battery"
+charging_symbol = "electric_plug"
+discharging_symbol = "zap"
+
+[[battery.display]]
+threshold = 30
+style = "bold red"
+
+[character]
+error_symbol = " [heavy_multiplication_x](bold red)"
+success_symbol = "+"
+
+[cmd_duration]
+min_time = 10_000 # Show command duration over 10,000 milliseconds (=10 sec)
+format = " took $duration"
+
+[git_commit]
+commit_hash_length = 8
+style = "bold white"
+
+[git_state]
+format = '($state( $progress_current of $progress_total)) '
+
+[git_status]
+conflicted = "crossed_swords "
+ahead = "racing_car dash ×${count}"
+behind = "turtle ×${count}"
+diverged = "trident racing_car dash ×${ahead_count} turtle ×${behind_count}"
+untracked = "railway_track ×${count}"
+stashed = "package "
+modified = "memo ×${count}"
+staged = "card_file_box ×${count}"
+renamed = "name_badge ×${count}"
+deleted = "wastebasket ×${count}"
+style = "bright-white"
+format = "$all_status$ahead_behind"
+
+[hostname]
+ssh_only = false
+format = "[@$hostname]($style)"
+trim_at = "-"
+style = "bold blue"
+disabled = false
+
+[julia]
+format = "$symbol$version "
+symbol = "ஃ "
+style = "bold green"
+
+[memory_usage]
+format = "$symbol${ram}( | ${swap}) "
+threshold = 70
+style = "bold dimmed white"
+disabled = false
+
+[package]
+disabled = true
+
+[python]
+format = "$symbol$version "
+style = "bold green"
+
+[rust]
+format = "$symbol$version "
+style = "bold green"
+
+[time]
+time_format = "%a, %b %d, %Y | %I:%M%P ️"
+format = "$time($style) "
+style = "bright-white"
+disabled = false
+
+[username]
+style_user = "bold blue"
+style_root = "bold red"
+format = "[$user]($style)"
+show_always = true
