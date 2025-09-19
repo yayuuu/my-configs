@@ -1,0 +1,43 @@
+{
+  "logo": {
+    "type": "file",
+    "source": "/home/daniel/.config/fastfetch/logo.txt",
+    "padding": { "right": 0, "top": 1 }
+  },
+
+  "display": { "separator": " " },
+
+  "modules": [
+    { "type": "break"},
+    { "type": "os",       "key": "🖸 " },
+
+    { "type": "break" },
+
+    { "type": "kernel",   "key": "    ⦿ " },
+    { "type": "shell",    "key": "    🗕 " },
+    { "type": "wm",       "key": "    🗗 " },
+    { "type": "de",       "key": "     " },
+
+    { "type": "break" }, { "type": "break" },
+
+    { "type": "custom",   "key": "🖳 ", "format": "Hardware" },
+    { "type": "break" },
+
+    { "type": "host",     "key": "    🖥 " },
+    { "type": "cpu",      "key": "    󰻠 " },
+    { "type": "memory",   "key": "    󰾆 " },
+    { "type": "gpu",      "key": "    󰻑 " },
+    { "type": "display",  "key": "    󰍹 " },
+
+    { "type": "break" }, { "type": "break" },
+
+    { "type": "custom",   "key": "🛈 ", "format": "Info" },
+    { "type": "break" },
+
+    { "type": "uptime",       "key": "    ⏻ " },
+    { "type": "packages",     "key": "    󰏖 " },
+    { "type": "terminal",     "key": "     " },
+    { "type": "terminalfont", "key": "    🗛 " },
+    { "type": "localip",      "key": "    🖧 " }
+  ]
+}
