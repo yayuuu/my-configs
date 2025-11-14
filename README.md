@@ -1,5 +1,6 @@
 # Requirements:
 
-fastfetch
-toilet
-chafa
+- fastfetch
+- toilet
+- chafa
+- starship
