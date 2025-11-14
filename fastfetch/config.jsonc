@@ -1,11 +1,18 @@
 {
   "logo": {
     "type": "file",
+    //"type": "auto",
     "source": "/home/daniel/.config/fastfetch/logo.txt",
+    //"source": "/home/daniel/fa3c8475-67c0-45e6-89dc-307c179dc5c7.png",
+    //"width": 32,
+    //"preserveAspectRatio": true,
     "padding": { "right": 0, "top": 1 }
   },
 
-  "display": { "separator": " " },
+  "display": {
+    "separator": " ",
+    "disableLinewrap": true
+  },
 
   "modules": [
     { "type": "break"},
@@ -13,10 +20,14 @@
 
     { "type": "break" },
 
+//    { "type": "custom",   "key": "    ⦿ ", "format": "Linux 6.20.1+deb13-amd64" },
     { "type": "kernel",   "key": "    ⦿ " },
+
     { "type": "shell",    "key": "    🗕 " },
     { "type": "wm",       "key": "    🗗 " },
     { "type": "de",       "key": "     " },
+//    { "type": "custom",       "key": "     ", "format": "KDE Plasma 6.6.6" },
+
 
     { "type": "break" }, { "type": "break" },
 
