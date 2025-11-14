@@ -1,0 +1,9 @@
+// Add lines like this to spawn processes at startup.
+// Note that running niri as a session supports xdg-desktop-autostart,
+// which may be more convenient to use.
+// See the binds section below for more spawn examples.
+// This line starts waybar, a commonly used bar for Wayland compositors.
+spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
+spawn-at-startup "dms" "run"
+spawn-at-startup "xhost" "+si:localuser:root"
+spawn-at-startup "keyup" "/dev/input/by-id/usb-SONiX_USB_DEVICE-event-kbd" "125" "dms" "ipc" "spotlight" "toggle"

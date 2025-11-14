@@ -1,0 +1,12 @@
+{
+  "id": "Workspaces",
+  "name": "Workspaces",
+  "description": "Static workspaces manager",
+  "version": "1.0.0",
+  "author": "Daniel Skorupa",
+  "icon": "widgets",
+  "type": "widget",
+  "component": "./Workspaces.qml",
+  "settings": "./WorkspacesSettings.qml",
+  "permissions": ["settings_read", "settings_write"]
+}

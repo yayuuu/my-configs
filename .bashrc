@@ -1,8 +1,8 @@
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 eval "$(starship init bash)"
 
-alias hstr="history -a && hstr"
-alias ll="eza --icons=always -lF --group-directories-first"
-alias ls="eza --icons=always --group-directories-first"
+alias ll="eza --icons=always -lFx --group-directories-first"
+alias ls="eza --icons=always -x --group-directories-first"
 alias ed="setsid kwrite >/dev/null 2>&1"
 alias cat='f(){ for f in "$@"; do file --mime-type "$f" | grep -q "image/" && chafa "$f" || command cat "$f"; done; }; f'
 alias clbin="curl -F 'clbin=<-' https://clbin.com/"

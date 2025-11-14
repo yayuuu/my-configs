@@ -1,0 +1,66 @@
+#!/bin/env bash
+command=$@
+output=$(niri msg focused-output)
+logicalSize=$(awk 'match($0,/Logical size:[^0-9]*([0-9]+)x([0-9]+)/,a){print a[1]" "a[2]; exit}' <<< "$output")
+read mwidth mheight <<< "$logicalSize"
+gaps=$(cat ~/.config/niri/config.kdl | awk 'match($0,/^[[:space:]]*gaps[[:space:]]+([0-9]+)/,a){print a[1]; exit}')
+gap=$(( gaps * 2 ))
+windowWidthMax=$(( mwidth - gap ))
+widthRestored=false
+
+if (( mheight > mwidth )); then
+    vertical=true
+else
+    vertical=false
+fi
+
+echo $mwidth
+
+echo "Max szerokość pionowa: $windowWidthMax"
+
+width=$(niri msg focused-window | awk 'match($0,/Window size:[^0-9]*([0-9]+)/,a){print a[1]; exit}')
+if (( width + gap >= mwidth )); then
+    windowMaxed=true
+else
+    windowMaxed=false
+fi
+
+if [[ "$vertical" == "true" ]]; then
+    if [[ "$windowMaxed" == "true" ]]; then
+        # na pionowym monitorze wstępnie przywróć oryginalną szerokość kolumny
+        # tylko jeśli okno jest na pełną szerokość monitora
+        niri msg action maximize-column
+        widthRestored=true
+    fi
+fi
+
+# wykonaj właściwą akcję (np przeniesienie okna na inny workspace lub monitor)
+niri msg action $command
+
+sleep 0.02
+
+#echo $window
+
+output=$(niri msg focused-output)
+targetWidth=$(niri msg focused-window | awk 'match($0,/Window size:[^0-9]*([0-9]+)/,a){print a[1]; exit}')
+logicalSize=$(awk 'match($0,/Logical size:[^0-9]*([0-9]+)x([0-9]+)/,a){print a[1]" "a[2]; exit}' <<< "$output")
+read targetMwidth targetMheight <<< "$logicalSize"
+if (( targetMheight > targetMwidth )); then
+    targetVertical=true
+else
+    targetVertical=false
+fi
+
+echo $targetMwidth;
+
+echo "Pierwszy pionowy: $vertical"
+echo "Drugi pionowy: $targetVertical"
+
+if [[ "$vertical" == "true" && "$targetVertical" == "true" && "$widthRestored" == "true" ]]; then
+    niri msg action maximize-column
+    exit 0
+fi
+if [[ "$vertical" == "false" && "$targetVertical" == "true" && "$windowMaxed" == "false" ]]; then
+    niri msg action maximize-column
+    exit 0
+fi

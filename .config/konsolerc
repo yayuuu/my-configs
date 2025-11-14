@@ -1,0 +1,59 @@
+2 screens: Height=635
+2 screens: Width=1022
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAQAAAAAAAAEQAAACWPwCAAAAAvsAAAAcAFMAUwBIAE0AYQBuAGEAZwBlAHIARABvAGMAawAAAAAjAAACWAAAASkBAAAD+wAAACIAUQB1AGkAYwBrAEMAbwBtAG0AYQBuAGQAcwBEAG8AYwBrAAAAAAD/////AAABjAEAAAMAAAP+AAACTQAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAACAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAAAAAAAAAABwAcwBlAHMAcwBpAG8AbgBUAG8AbwBsAGIAYQByAAAAAWr/////AAAAAAAAAAA=
+
+[Desktop Entry]
+DefaultProfile=Profile 1.profile
+
+[FileDialogSize]
+3 screens: Height=720
+3 screens: Width=1720
+
+[General]
+ConfigVersion=1
+
+[MainWindow]
+1920x1080 screen: Height=1072
+1920x1080 screen: Width=1912
+2 screens: Height=1400
+2 screens: Width=1712
+2 screens: XPosition=390
+2 screens: YPosition=397
+2021x1137 screen: Height=1097
+2021x1137 screen: Width=2013
+2560x1080 screen: Height=581
+2560x1080 screen: Width=1133
+3 screens: Height=721
+3 screens: Width=1131
+3 screens: XPosition=2303
+3 screens: YPosition=1242
+800x600 screen: Height=563
+800x600 screen: Width=800
+800x600 screen: Window-Maximized=true
+800x600 screen: XPosition=0
+800x600 screen: YPosition=37
+DisplayPort-0 HDMI-A-0=HDMI-A-0
+MenuBar=Disabled
+RestorePositionForNextInstance=false
+XWAYLAND0 XWAYLAND1 XWAYLAND2=XWAYLAND2
+default=default
+
+[MainWindow][Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[Notification Messages]
+CloseAllTabs=true
+
+[SplitView]
+SplitViewVisibility=AlwaysHideSplitHeader
+
+[TabBar]
+TabBarPosition=Top
+TabBarVisibility=AlwaysHideTabBar
+
+[Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[UiSettings]
+ColorScheme=

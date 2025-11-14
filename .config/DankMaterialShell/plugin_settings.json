@@ -1,0 +1,123 @@
+{
+  "dankActions": {
+    "enabled": true,
+    "variants": [
+      {
+        "icon": "power_settings_new",
+        "displayText": "",
+        "displayCommand": "",
+        "clickCommand": "setsid ~/.local/bin/powermenu select &",
+        "middleClickCommand": "",
+        "rightClickCommand": "",
+        "updateInterval": 0,
+        "showIcon": true,
+        "showText": true,
+        "id": "variant_1760977443453",
+        "name": "Sesja"
+      },
+      {
+        "icon": "arrow_left",
+        "displayText": "",
+        "displayCommand": "",
+        "clickCommand": "niri msg action focus-column-left",
+        "middleClickCommand": "",
+        "rightClickCommand": "niri msg action focus-column-first",
+        "updateInterval": 0,
+        "showIcon": true,
+        "showText": false,
+        "id": "variant_1761009788667",
+        "name": "Focus Column Left"
+      },
+      {
+        "icon": "arrow_right",
+        "displayText": "",
+        "displayCommand": "",
+        "clickCommand": "niri msg action focus-column-right",
+        "middleClickCommand": "",
+        "rightClickCommand": "niri msg action focus-column-last",
+        "updateInterval": 0,
+        "showIcon": true,
+        "showText": false,
+        "id": "variant_1761009890575",
+        "name": "Focus Column Right"
+      },
+      {
+        "icon": "close",
+        "displayText": "",
+        "displayCommand": "",
+        "clickCommand": "niri msg action close-window",
+        "middleClickCommand": "",
+        "rightClickCommand": "",
+        "updateInterval": 0,
+        "showIcon": true,
+        "showText": false,
+        "id": "variant_1761010084368",
+        "name": "Close Window"
+      },
+      {
+        "icon": "full_coverage",
+        "displayText": "",
+        "displayCommand": "",
+        "clickCommand": "niri msg action maximize-column",
+        "middleClickCommand": "",
+        "rightClickCommand": "niri msg action switch-preset-column-width\n",
+        "updateInterval": 0,
+        "showIcon": true,
+        "showText": false,
+        "id": "variant_1761010196298",
+        "name": "Maximize"
+      },
+      {
+        "icon": "view_apps",
+        "displayText": "",
+        "displayCommand": "",
+        "clickCommand": "niri msg action open-overview",
+        "middleClickCommand": "",
+        "rightClickCommand": "",
+        "updateInterval": 0,
+        "showIcon": true,
+        "showText": false,
+        "id": "variant_1761010621780",
+        "name": "Overview"
+      }
+    ]
+  },
+  "niriWindows": {
+    "enabled": true,
+    "noTrigger": true,
+    "trigger": "!"
+  },
+  "webSearch": {
+    "enabled": true,
+    "noTrigger": false,
+    "trigger": "?",
+    "searchEngines": []
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
+  },
+  "emojiLauncher": {
+    "enabled": true
+  },
+  "commandRunner": {
+    "enabled": true,
+    "noTrigger": false,
+    "trigger": ">",
+    "history": [
+      "dgop",
+      "htop",
+      "fastfetch && sleep 15",
+      "fastfetch & sleep 10"
+    ],
+    "terminal": "konsole"
+  },
+  "dankHooks": {
+    "enabled": false,
+    "wallpaperPath": "",
+    "monitorWallpaper": ""
+  },
+  "Workspaces": {
+    "enabled": true
+  }
+}

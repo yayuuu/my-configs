@@ -1,0 +1,10 @@
+workspace "w1"
+workspace "w2"
+workspace "w3"
+workspace "w4"
+workspace "w5"
+// 6th is dynamic
+// workspace "w7" { open-on-output "DP-2"; }
+// 8th is dynamic
+// workspace "w9" { open-on-output "HDMI-A-3"; }
+// 10th is dynamic

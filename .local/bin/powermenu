@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+TEXT_COLOR="eceff4FF"
+SELECTED_TEXT_COLOR="bf616aFF"
+BG_COLOR="0e131aFF"
+SELECTED_BG_COLOR="bf616a00"
+FONT="Cantarell"
+GAPS="6"
+
+command -v fuzzel >/dev/null || { echo "Install fuzzel"; exit 1; }
+
+if [ "$(ps -aux | grep $USER | grep [f]uzzel | wc -l)" -ge 1 ]; then
+  test="powermenu dziala"   
+  pkill -u $USER -x fuzzel
+  exit 0 
+fi
+
+# Edit this for menu options
+read -r -d '' SHORTCUTS <<EOF
+Zablokuj sesję:dms ipc call lock lock
+Wyloguj się:niri msg action quit
+Uśpij:busctl call org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager Suspend b true
+Hibernacja:busctl call org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop/login1.Manager Hibernate b true
+Restart:busctl call org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager Reboot b true
+Wyłącz komputer:busctl call org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager PowerOff b true
+EOF
+
+if [ "$1" == "select" ]; then
+  position="--anchor=top-right --x-margin=$GAPS --y-margin=$GAPS --font=$FONT:size=11 --vertical-pad=0 --horizontal-pad=24 --border-width=0"
+else
+  position="--font=$FONT:size=20"
+fi
+
+main_menu () {
+  local menu_data
+  menu_data=$(printf "%s\n" "$SHORTCUTS" | awk -F: '{printf "%s\n",$1}')
+  local choice
+  choice=$(printf "%s\n" "$menu_data" \
+          | fuzzel --dmenu --background-color=$BG_COLOR --text-color=$TEXT_COLOR --selection-color=$SELECTED_BG_COLOR --selection-text-color=$SELECTED_TEXT_COLOR --prompt-color=0e131aEE --lines=7 --width=9 $position --prompt="                                                      " ) 
+
+  if [ -z "$choice" ]; then
+    exit 0
+  fi
+
+  full_line=$(printf "%s\n" "$SHORTCUTS" | grep "$choice")
+  #echo $full_line
+
+  cmd=$(echo "$full_line" | awk -F: '{printf "%s\n",$2}')
+  #echo $cmd
+  exec $cmd
+
+  exit 0
+}
+
+main_menu
