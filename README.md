@@ -1,0 +1,5 @@
+# Requirements:
+
+fastfetch
+toilet
+chafa
