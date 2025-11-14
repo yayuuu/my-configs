@@ -15,6 +15,7 @@
 - xdg-desktop-portal-gtk
 - fzf
 - fuzzel
+- playerctl
 - KDE
     - plasma-deck color scheme
     - konsole
