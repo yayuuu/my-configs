@@ -1,5 +1,5 @@
 format = """
- [┌──\\(](bold #9D66FF)$username$hostname[\\)─\\[](bold #9D66FF)$directory[\\]](bold #9D66FF) \
+ [╭──\\(](bold #9D66FF)$username$hostname[\\)─\\[](bold #9D66FF)$directory[\\]](bold #9D66FF) \
 $kubernetes\
 $git_branch\
 $hg_branch\
@@ -50,7 +50,7 @@ $env_var\
 $crystal\
 $custom\
 $sudo
- [└─>](bold #9D66FF) """
+ [╰─⪧](bold #9D66FF) """
 
 [directory]
 truncation_length = 100
